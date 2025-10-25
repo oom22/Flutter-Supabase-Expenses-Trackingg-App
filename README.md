@@ -1,96 +1,89 @@
-# Assessment: Recipe App Using Flutter & BLoC
+# 🍳 Recipe Manager App
 
-## Introduction
+A simple Flutter app built using **BLoC (Business Logic Component)** architecture for managing recipes.  
+Users can **add**, **view**, and **filter recipes by category**, with a clean and modular folder structure.
 
-This assessment aims to measure your understanding and ability to build Flutter applications using the `flutter_bloc` library for State Management. The project will focus on creating a simple recipe book application where users can view, add, and filter recipes by category.
+---
 
-## Project Overview
+## 📁 Project Structure
 
-The "Recipe App" is a mobile application that allows users to browse a list of recipes, view details of each recipe, and add new recipes to the list. The primary feature to focus on is the ability to effectively manage application state using the BLoC (Business Logic Component) pattern.
-
-## Required Core Features
-
-1.  **Display Recipe List:**
-    *   The main screen should display a list of all available recipes.
-    *   Each recipe in the list should show its title, thumbnail image (optional), and category.
-
-2.  **Display Recipe Details:**
-    *   When clicking on any recipe in the list, the app should navigate to a new screen displaying all recipe details (title, full description, ingredients, preparation steps).
-
-3.  **Add New Recipe:**
-    *   The app should contain a button or icon to add a new recipe.
-    *   When pressed, a screen appears containing a Form to input new recipe details (title, description, ingredients, steps, and category).
-    *   After saving, the new recipe should appear in the main list.
-
-4.  **Filter Recipes by Category:**
-    *   The main screen should provide a way to filter displayed recipes based on their category (for example: Breakfast, Lunch, Dinner, Desserts).
-    *   When selecting a specific category, the list should display only recipes belonging to that category.
-
-## Technical Requirements
-
-| Requirement | Description |
-| --- | --- |
-| **State Management** | `flutter_bloc` and `bloc`  |
-| **Data** | You can use mock data stored locally in a Dart file. No need to use a real database or external API. |
-| **Navigation** | Use `go_router`. |
-| **User Interface (UI)** | The interface should be clean, clear, and easy to use |
-
-## Data Model
-
-You should create a `class` to represent a recipe. It should contain the following fields at minimum:
-
-```dart
-class Recipe {
-  final String id;
-  final String title;
-  final String description;
-  final List<String> ingredients;
-  final List<String> steps;
-  final String category; // e.g., 'Breakfast', 'Lunch', 'Dinner'
-
-  Recipe({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.ingredients,
-    required this.steps,
-    required this.category,
-  });
-}
+```
+lib
+│
+├── common/
+│   └── widgets/
+│       └── custom_field.dart
+│
+├── features/
+│   ├── add_recipe/
+│   │   └── screen/
+│   │       └── add_recipe_screen.dart
+│   │
+│   ├── navigation/
+│   │   └── recipe_details/
+│   │       └── screen/
+│   │           └── recipe_details_screen.dart
+│   │
+│   └── recipes/
+│       ├── bloc/
+│       │   ├── bloc/
+│       │   │   ├── recipe_bloc_bloc.dart
+│       │   │   ├── recipe_bloc_event.dart
+│       │   │   └── recipe_bloc_state.dart
+│       │
+│       └── screen/
+│           └── recipies_screen.dart
+│
+├── models/
+│   ├── recipe_model.dart
+│   └── recipe_model.mapper.dart
+│
+├── services/
+│   ├── setup.dart
+│   └── main.dart
 ```
 
-## Suggested BLoC Structure
+---
 
-To manage recipe state, it is suggested to create a single `RecipesBloc` that handles all recipe-related operations.
+## 🧠 Features
 
-*   **Events:**
-    *   `LoadRecipes`: To load the initial list of recipes.
-    *   `AddRecipe`: To add a new recipe to the list.
-    *   `FilterRecipesByCategory`: To filter recipes based on a specific category.
+- Add new recipes with **title**, **description**, **ingredients**, **steps**, and **category**  
+- Filter recipes by **category** dynamically  
+- View full recipe details with a clean **expanding sections UI**  
+- Built with the **BLoC pattern** for scalable and maintainable state management  
+- Organized modular structure for clear separation of concerns  
 
-*   **States:**
-    *   `RecipesInitial`: The initial state before loading any data.
-    *   `RecipesLoadInProgress`: The loading state while fetching recipes.
-    *   `RecipesLoadSuccess`: The success state after loading recipes, containing the list of recipes.
-    *   `RecipesLoadFailure`: The failure state in case an error occurs while loading data.
+---
 
-## Screen and Widget Structure
+## 🎥 Demo Video
 
-*   `RecipesListPage`: The main screen that displays the recipe list and filtering tools. This screen listens to `RecipesBloc` to "rebuild" when the state changes.
-*   `RecipeDetailPage`: A screen to display details of a single recipe.
-*   `AddRecipePage`: A screen containing a form to add a new recipe. Upon saving, it sends an `AddRecipe` event to `RecipesBloc`.
 
-## Evaluation Criteria
 
-*   **Code Quality:** Code organization, clarity, and following best practices in Dart and Flutter.
-*   **BLoC Pattern Implementation:** Correct implementation of BLoCs, events, and states. Separation of Business Logic from the user interface.
-*   **Feature Completeness:** Successfully implementing all required core features.
+https://github.com/user-attachments/assets/ad1067e6-83b7-45e0-a698-f3160c1f6019
 
-## Bonus Features
 
-If you have extra time, you can add any of the following features:
+---
 
-*   **Search:** Add a search bar to filter recipes by title.
-*   **Local Storage:** Save recipes to local storage (using `shared_preferences` or `hive`) so they don't disappear when closing the app.
-*   **Animations:** Add animated effects to improve user experience.
+## ✨ Bonus Section
+
+- Implemented **Dropdown filtering** connected directly to Bloc state  and shows the only available categories based on the recepies added 
+- Clean UI for recipe details using **ExpansionTiles** for ingredients and steps  
+
+
+---
+
+
+
+## 🛠 Tech Stack
+
+- **Flutter** (UI Framework)
+- **BLoC / flutter_bloc** (State Management)
+- **GoRouter** (Navigation)
+- **Dart** (Programming Language)
+
+---
+
+## 👨‍💻 Author
+
+**Omar Alharbi**  
 
