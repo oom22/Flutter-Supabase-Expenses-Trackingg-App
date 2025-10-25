@@ -66,7 +66,8 @@ https://github.com/user-attachments/assets/ad1067e6-83b7-45e0-a698-f3160c1f6019
 
 ## ✨ Bonus Section
 
-- Implemented **Dropdown filtering** connected directly to Bloc state  and shows the only available categories based on the recepies added 
+- Implemented **Dropdown filtering** connected directly to Bloc state  and shows the only available categories based on the recepies added
+- Used Enum With Categories for Better Selection
 - Clean UI for recipe details using **ExpansionTiles** for ingredients and steps  
 
 
