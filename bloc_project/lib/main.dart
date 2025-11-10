@@ -6,9 +6,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
-    url: 'https://ftegonlousyoxxxzeubq.supabase.co',
+    url: '',
     anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0ZWdvbmxvdXN5b3h4eHpldWJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1NTkxOTMsImV4cCI6MjA3NzEzNTE5M30.s10QEaO4BRl1qxaI4tZPkCgg69Z2d98OtDM_zrhecRY',
+        '',
   );
   runApp(const Flutter95App());
 }
