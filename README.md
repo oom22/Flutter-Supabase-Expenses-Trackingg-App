@@ -1,90 +1,83 @@
-# 🍳 Recipe Manager App
+# 💾 Supa Project (Flutter + Supabase)
 
-A simple Flutter app built using **BLoC (Business Logic Component)** architecture for managing recipes.  
-Users can **add**, **view**, and **filter recipes by category**, with a clean and modular folder structure.
+This project is a **Win95-styled Expense Management App** built with
+**Flutter** and **Supabase**. It allows users to sign up, sign in, add,
+edit, and delete expenses --- all displayed in a nostalgic Windows 95 UI
+using `flutter95`.
 
----
+------------------------------------------------------------------------
 
-## 📁 Project Structure
+## 🧱 Project Structure
 
-```
-lib
-│
-├── common/
-│   └── widgets/
-│       └── custom_field.dart
-│
-├── features/
-│   ├── add_recipe/
-│   │   └── screen/
-│   │       └── add_recipe_screen.dart
-│   │
-│   ├── navigation/
-│   │   └── recipe_details/
-│   │       └── screen/
-│   │           └── recipe_details_screen.dart
-│   │
-│   └── recipes/
-│       ├── bloc/
-│       │   ├── bloc/
-│       │   │   ├── recipe_bloc_bloc.dart
-│       │   │   ├── recipe_bloc_event.dart
-│       │   │   └── recipe_bloc_state.dart
-│       │
-│       └── screen/
-│           └── recipies_screen.dart
-│
-├── models/
-│   ├── recipe_model.dart
-│   └── recipe_model.mapper.dart
-│
-├── services/
-│   ├── setup.dart
-│   └── main.dart
-```
+    lib/
+    ├── features/
+    │   ├── add_expense/
+    │   │   └── add_expense_screen.dart
+    │   ├── auth/
+    │   │   ├── bloc/
+    │   │   │   ├── auth_bloc.dart
+    │   │   │   ├── auth_event.dart
+    │   │   │   └── auth_state.dart
+    │   │   ├── sign_in/
+    │   │   │   └── sign_in_screen.dart
+    │   │   └── sign_up/
+    │   │       └── sign_up_screen.dart
+    │   ├── bloc/
+    │   │   └── bloc/
+    │   │       ├── expenses_bloc.dart
+    │   │       ├── expenses_event.dart
+    │   │       └── expenses_state.dart
+    │   ├── edit_expense/
+    │   │   └── edit_expense_screen.dart
+    │   ├── expense_details/
+    │   │   └── expense_details_screen.dart
+    │   └── expenses_list/
+    │       └── expenses_list_screen.dart
+    │
+    ├── models/
+    │   ├── expense_model.dart
+    │   └── expense_model.mapper.dart
+    │
+    └── main.dart
 
----
+------------------------------------------------------------------------
 
 ## 🧠 Features
 
-- Add new recipes with **title**, **description**, **ingredients**, **steps**, and **category**  
-- Filter recipes by **category** dynamically  
-- View full recipe details with a clean **expanding sections UI**  
-- Built with the **BLoC pattern** for scalable and maintainable state management  
-- Organized modular structure for clear separation of concerns  
+-   🪟 **Win95 UI Design** using the `flutter95` package
+-   🔑 **Authentication System** (Sign Up / Sign In) via Supabase
+-   💰 **Expense Management**
+    -   Add, edit, delete, and view expense entries
+    -   Categories: Food, Transportation, Bills, Entertainment, Health
+-   🧭 **Bloc Architecture** for scalable state management
+-   📅 **Supabase Database Integration**
+-   🚪 **Logout Functionality**
 
----
+------------------------------------------------------------------------
 
-## 🎥 Demo Video
+## ⚙️ Tech Stack
+
+  Technology      Description
+  --------------- ----------------------------------------------
+  **Flutter**     Frontend framework for cross-platform apps
+  **Supabase**    Backend-as-a-Service (auth + database)
+  **Bloc**        State management pattern
+  **flutter95**   Retro-styled UI package mimicking Windows 95
+
+------------------------------------------------------------------------
+
+## 🧑‍💻 Developed By
+
+**Omar Alharbi**\
+💡 Built with Flutter, Supabase, and a love for retro design ✨
+
+------------------------------------------------------------------------
+
+## 📷 Demo
 
 
 
-https://github.com/user-attachments/assets/ad1067e6-83b7-45e0-a698-f3160c1f6019
+https://github.com/user-attachments/assets/2b7ef4c7-58e5-46ae-8294-d45208113a57
 
 
----
-
-## ✨ Bonus Section
-
-- Implemented **Dropdown filtering** connected directly to Bloc state  and shows the only available categories based on the recepies added
-- Used Enum With Categories for Better Selection
-- Clean UI for recipe details using **ExpansionTiles** for ingredients and steps  
-
-
----
-
-
-
-## 🛠 Tech Stack
-
-- **Flutter** (UI Framework)
-- **BLoC / flutter_bloc** (State Management)
-- **GoRouter** (Navigation)
-- **Dart** (Programming Language)
-
----
-
-## 👨‍💻 Author
-
-**Omar Alharbi**  
 
